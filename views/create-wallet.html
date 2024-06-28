@@ -1,0 +1,67 @@
+{{template "partials/header" .}}
+
+
+
+<div class="main-content">
+  <div class="page-content">
+    <div class="container-fluid">
+<div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="header-title mb-4"> <span data-toggle="tooltip" data-placement="right"> My Profile </span></h4>
+          <div class="my-1">
+            {{if .Alert}}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>{{.Alert}}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {{end}}
+                
+                
+               
+                <form method="POST" action="/generate-new-wallet-address" autocomplete="off">
+                    <input type="hidden" name="VID" id="VID" value="{{.VoltID}}">
+                    <div class="row">
+                    
+                  
+                      
+                      <div class="col-md-3 my-2">
+                        <div class="form-floating">
+                          
+                          
+                          <select class="form-select" name="WID" id="WID" title="Wallet" required="">
+                            <option value="EOS_TEST">EOS_TEST</option>
+                            <option value="BCH_TEST">BCH_TEST</option>
+                            <option value="XLM_TEST">XLM_TEST</option>
+                            <option value="XRP_TEST">XRP_TEST</option>
+                            <option value="BSV_TEST">BSV_TEST</option>
+                            <option value="DASH_TEST">DASH_TEST</option>
+                            <option value="MATIC_T">MATIC_T</option>
+                            <option value="OSMO_TEST">OSMO_TEST</option>
+                            <option value="SOL_TEST">SOL_TEST</option>
+                            <option value="RUNE_TEST">RUNE_TEST</option>
+                            <option value="NEAR_TEST">NEAR_TEST</option>
+                            </select>
+                            
+                          <label for="WID">Select Wallet List</label>
+                        </div>
+                      </div>
+                     
+                   
+                      
+                      
+                    </div>
+                    <button type="submit" id="submit" class="btn btn-sm btn-primary template" name="submit" title="submit" value="submit">Submit</button>
+                  </form>
+
+               
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+</div> 
+</div>
+  {{template "partials/footer" .}}

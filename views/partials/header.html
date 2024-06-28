@@ -1,0 +1,127 @@
+
+
+<!-- <header>
+    <p>My Header</p>
+    
+    
+    {{ if .CurrentSession }}
+    <span id="greeting">Welcome, {{ .CurrentSession }} [ <a href="/logout">Log Out</a> ]</span>
+    {{ end }}
+    
+  
+
+   
+
+   
+    {{ range .Sessions }}
+    <article class="bg-slate-700 rounded-lg p-6 w-full flex gap-2 items-center drop-shadow-xl">
+        <div class="text-sm w-4/5 border-r border-r-error pr-4">
+            <p>
+                <span class="font-extrabold text-error">
+                    Session ID:
+                </span>
+                &nbsp;{{ .LoginIP }}
+            </p>
+           
+            {{ end }}
+
+            {{ range .Session }}
+            <article class="bg-slate-700 rounded-lg p-6 w-full flex gap-2 items-center drop-shadow-xl">
+                <div class="text-sm w-4/5 border-r border-r-error pr-4">
+                    <p>
+                        <span class="font-extrabold text-error">
+                            Session ID:
+                        </span>
+                        &nbsp;{{ .LoginIP }}
+                    </p>
+                   
+                    {{ end }}
+         
+</header> -->
+
+<header id="page-topbar" style="border:1px solid #E5E5E5 !important;box-shadow:5px 5px 10px #e8e8e8,-5px -5px 10px #ffffff;">
+    <!-- making lienaer greand in background on header bar using the sytle shheret -->
+    <div class="navbar-header bg">
+      <div class="d-flex">
+        <!-- LOGO -->
+        <button type="button" class="btn btn-sm  text-white font-size-24 header-item waves-effect" id="vertical-menu-btn"> <i class="fa-solid fa-layer-group" style="border: unset !important;"></i> </button>
+        <div class="d-flex text-center">
+          <div class="navbar-brand-box"> <span class="logo-lg"><img src="https://itio.in/ebank/images/NEO_BANK_W.png" alt="Logo" class="img-fluid header-img"> </span> </div>
+        </div>
+        <!-- App Search-->
+      </div>
+      <div class="d-flex">
+        <div class="dropdown d-inline-block d-lg-none ml-2">
+          <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </button>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0" aria-labelledby="page-header-search-dropdown">
+            <form class="p-3">
+              <div class="form-group m-0">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                  <div class="input-group-append">
+                    <button class="btn btn-danger" type="submit"><i class="mdi mdi-magnify"></i></button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="dropdown d-inline-block" id="load_div">
+          <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <!--<i class="mdi mdi-bell-outline" style="color:white;"></i>-->
+          <span class="badge badge-danger badge-pill" style="right: 0; color:white !important ">
+          <!-- 100 -->
+          </span></button>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0" aria-labelledby="page-header-notifications-dropdown">
+            <div class="p-3">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="m-0 font-weight-medium text-uppercase">Notifications </h6>
+                </div>
+                <div class="col-auto"> <span class="badge badge-pill badge-primary">New
+                                  </span> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown-center mx-2 mb-1">
+                  <button class="btn btn-outline-light  mt-3 text-start mx-1" data-bs-toggle="dropdown" aria-expanded="false"> {{ .CurrentSession }} </button>
+                  <ul class="dropdown-menu bg-light-subtle px-2" style="width:200px !important;">
+            <li class="text-start text-white mx-0 botder bg-danger rounded p-2">{{ range .Session }}{{ .LoginIP }}{{ end }} {{ .CurrentSession }}
+              <!-- <div>ITIO Innovex</div> -->
+                        </li>
+            <li><a class="dropdown-item" href="/profile" title="Profile"><i class="fa-solid fa-user fa-fw"></i> Profile</a> </li>
+            <li><a class="dropdown-item" href="/login-history" title="Login History"><i class="fa-solid fa-circle-info  fa-fw"></i> Login History</a></li>
+            <li><a class="dropdown-item" href="/logout" title="Logout"><i class="fa-solid fa-right-from-bracket fa-fw"></i> Sign Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ========== Left Sidebar Start ========== -->
+  <div class="vertical-menu">
+    <div data-simplebar class="h-100 sidebar-color111 " >
+      <!--- Sidemenu -->
+      <div id="sidebar-menu">
+        <!-- Left Menu Start -->
+  
+        <ul class="metismenu list-unstyled side-menu m-2 border rounded">
+          <li class="list-item list-item-selected"><a href="/"> <i class="fa-solid fa-warehouse fa-fw"></i> <span>Dashboard</span></a></li>
+        </ul>
+      
+        <ul class="metismenu list-unstyled side-menu m-2 border rounded" >
+          <li class="list-item "><a href="/vault"><i class="fa-brands fa-bitcoin  fa-fw"></i> <span>Wallet</span></a></li>
+          <!-- <li class="list-item "><a href="/wallet/1/DOGE_TEST"> <span>Wallet</span></a></li> -->
+          <li class="list-item "><a href="/fireblocks-users"><i class="fa-solid fa-users fa-fw"></i> <span>Fireblocks User</span></a></li>
+        </ul>
+        <ul class="metismenu list-unstyled side-menu m-2 border rounded">
+          <!--<li class="menu-title" style="color:White ">Menu</li>-->
+          <li class="list-item "><a href="/profile"><i class="fa-solid fa-user fa-fw"></i> <span>Profile</span></a></li>
+          <li class="list-item "><a href="/login-history"><i class="fa-solid fa-circle-info  fa-fw"></i> <span>Login History</span></a></li>
+          <li class="list-item "><a href="/logout"><i class="fa-solid fa-right-from-bracket fa-fw"></i> <span>Logout</span></a></li>
+        </ul>
+        <div> </div>
+      </div>
+      <!-- Sidebar -->
+    </div>
+  </div>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{if .Title }}{{ .Title }}{{end}}</title>
+<meta content="{{if .Title }}{{ .Title }}{{end}}" name="description" />
+<meta content="{{if .Title }}{{ .Title }}{{end}}" name="author" />
+<!-- App favicon -->
+<link rel="shortcut icon" href="https://itio.in/ebank/images/fevicon.png">
+
+
+ <!-- Bootstrap CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link    href="https://itio.in/neobank/common/css/template.css" rel="stylesheet">
+<script   src="https://itio.in/neobank/common/js/template.js"></script>
+<link    href="https://itio.in/neobank/assets/libs/jqvmap/jqvmap.min.css" rel="stylesheet" />
+<!-- Icons Css -->
+<link   href="https://itio.in/neobank/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+<!-- App Css-->
+<link   href="https://itio.in/neobank/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- auto logout script -->
+<script src="https://itio.in/neobank/assets/libs/simplebar/simplebar.min.js"></script>
+
+<script src="https://itio.in/neobank/assets/libs/metismenu/metisMenu.min.js"></script>
+<script src="https://itio.in/neobank/assets/js/app.js"></script>
+
+<!-- auto logout script -->
+<style>
+.header-img{ max-height:40px;}
+
+@media screen and (min-width: 993px) {
+  #vertical-menu-btn {display: none;}
+}
+@media screen and (max-width: 993px) {
+	.header-img{ max-height:20px !important; margin-top: 25px !important; }
+	.navbar-brand-box {
+	padding: unset !important;
+	}
+	
+}
+</style>
+</head>
+<style>
+  .navbar-header{ background-color:#023759 !important; }
+  #sidebar-menu, .sidebar-color, .vertical-menu { background-color:#023759 !important; color:#ffffff !important; }
+  #sidebar-menu ul li a { color:unset !important; }
+  #sidebar-menu ul li a i { color:#ffffff !important; } 
+</style>
+  
+  <body data-layout="horizontal" class="h-100">
+  <!-- Begin page -->
+  <div id="layout-wrapper">
+    {{embed}}
+  </body>
+  <!-- Bootstrap JS (Optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script   src="https://itio.in/neobank/common/js/jquery-3.6.4.min.js"></script>
+</html>
+

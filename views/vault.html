@@ -1,0 +1,62 @@
+{{template "partials/header" .}}
+
+<div class="main-content">
+  <div class="page-content">
+    <div class="container-fluid">
+<div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+       
+        <div class="card-body">
+          <div class="row">
+              <div class="col-lg-8">
+                  <h4 class="header-title mb-4"> <span data-toggle="tooltip" data-placement="right"> Wallet List</span></h4>
+                  {{ if .ID }}
+                  <span><strong>Volt Name:</strong> {{.Name}} - {{.ID}}</span>
+                  {{end}}
+              </div>
+              <div class="col-lg-4 text-end my-2"> {{ if .ID }}<a href="/generate-new-wallet-address/{{.ID}}/" title="Request Wallet Address" class="btn btn-sm btn-outline-primary template"> Request Wallet Address</a>{{end}}</div>
+        </div>
+      </div>
+      
+      {{ if .ID }}
+
+      {{if .Alert}}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{.Alert}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {{end}}
+          <div class="table-responsive">
+            <table class="table table-centered table-nowrap mb-0">
+              <thead class="bg-primary text-white">
+                <tr class="font-weight-bolder">
+                  <th scope="col">COIN</th>
+                  <th scope="col">BALANCE</th>
+                  <th scope="col">WALLET ADDRESS</th>
+                  <th scope="col">NETWORK</th>
+                </tr>
+              </thead>
+              <tbody id="none"> 
+                  {{range .Assets}}
+                <tr>
+                  <td><a href="/wallet/{{$.ID}}/{{.ID}}" title="View Details" >{{.ID}}</a></td>
+                  <td>{{.Balance}}</td>
+                  <td>{{.Available}}</td>
+                  <td>{{.Pending}}</td>
+                </tr>
+                {{end}}
+              </tbody>
+            </table>
+          </div>
+          {{ else }}
+          <div class="row-fluid text-center">
+          <a  href="/generate-new-vault" class="btn btn-primary btn-lg my-4" title="Create Wallet Account" class="btn btn-sm btn-outline-primary template"> Create Wallet Account</a>
+          </div>
+          {{end}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div></div>
+  {{template "partials/footer" .}}
