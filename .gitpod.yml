@@ -1,0 +1,10 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: go mod tidy
+    command: go run main.go
+
+ports:
+  - port: 8080
+    onOpen: open-preview
